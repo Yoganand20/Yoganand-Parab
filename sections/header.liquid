@@ -25,11 +25,9 @@
     assign transparent_color_scheme = section.settings.collection_color_scheme
   endif
 
-  if section.settings.enable_sticky_header == 'always'
-    assign sticky = 'always'
-  elsif section.settings.enable_sticky_header == 'scroll-up'
-    assign sticky = 'scroll-up'
-  endif
+
+  assign sticky = section.settings.enable_sticky_header
+
 
   if transparent and sticky
     assign transparent = 'not-sticky'
